@@ -18,12 +18,12 @@
     @endif
     
     @if ($product->status === 'returned')
-        <form method="POST" action="{{ route('comments.store') }}">
+        <form method="POST" action="{{ route('comments.store', $product->id) }}">
             @csrf
-            <input type="hidden" name="user_id" value="1">
+            <input type="hidden" name="user_id" value="{{ $product->borrower_id }}">
             <label for="comment">Comment:</label>
             <input type="text" name="comment" id="comment">
-            <input type="hidden" name="commenter_id" value="{{ $product->borrower_id }}">
+            <input type="hidden" name="commenter_id" value="{{auth()->id()}}">
             <button type="submit">Add Comment</button>
         </form>
     @endif

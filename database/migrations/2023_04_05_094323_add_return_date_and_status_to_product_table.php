@@ -15,7 +15,7 @@ class AddReturnDateAndStatusToProductTable extends Migration
     {
         Schema::table('product', function (Blueprint $table) {
             $table->date('return_date')->nullable();
-            $table->enum('status', ['offered', 'lent', 'returned'])->default('offered');
+            $table->enum('status', ['offered', 'lent', 'returned', 'returned_accepted'])->default('offered');
         });
         
     }

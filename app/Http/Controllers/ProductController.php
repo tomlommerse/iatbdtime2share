@@ -67,13 +67,12 @@ class ProductController extends Controller
     }
 
     public function return(Request $request, $id){
-    $product = \App\Models\Product::findOrFail($id);
-    $product->status = 'returned';
-    // $product->borrower_id = null;
-    $product->save();
+        $product = \App\Models\Product::findOrFail($id);
+        $product->status = 'returned';
+        // $product->borrower_id = null;
+        $product->save();
 
-    return redirect("/")->with('success', 'Product has been returned.');
-}
-
+        return redirect("/")->with('success', 'Product has been returned.');
+    }
 
 }

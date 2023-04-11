@@ -16,8 +16,9 @@ class CommentController extends Controller
             'commenter_id' => $request->input('commenter_id')
         ]);
         $comment->save();
-        return redirect()->back();
+        return redirect('/');
     }
+        
 }
 
 

@@ -1,0 +1,147 @@
+:root{
+    --blackglass: rgba(0, 0, 0, 0.8);
+    --blackglassfilter: saturate(200%) blur(20px);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    box-sizing: inherit;
+    font-size: 61.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav{
+    overflow: hidden;
+    background-color: var(--blackglass);
+    backdrop-filter: var(--blackglassfilter);
+    position: fixed;
+    width: 100vw;
+    text-align: center;
+}
+
+nav > a{
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.add{
+    float: right;
+}
+
+
+body{
+    font-size: 1.8rem;
+    background-color: #ffffff;
+}
+
+main{
+    padding-top: 60px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modal.show {
+    display: block;
+}
+
+
+
+/* styling index */
+ul{
+    list-style: none;
+}
+
+.productlist{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 3vw;
+}
+
+.productcard{
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.productimg{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+
+
+/* styling product page */
+.productpage{
+    padding-left: 10vw;
+    width: 50vw;
+}
+
+.productpageimg{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    height: 40vw;
+}
+
+/* styling profile page */
+.profilepage{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "title title"
+        "swap ."
+        "products comments";
+}
+
+h1 {
+    grid-area: title;
+}
+
+.profileProductsOwned {
+    grid-area: products;
+    display: grid;
+}
+
+.profileProductsBorrowed {
+    grid-area: products;
+    display: none;
+}
+
+.profileComments{
+    grid-area: comments;
+}
+
+.swapButton{
+    gird-area: swap;
+    width: 25vw;
+}
+
+

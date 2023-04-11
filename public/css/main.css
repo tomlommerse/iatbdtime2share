@@ -135,6 +135,11 @@ h1 {
     display: none;
 }
 
+.profileProductsReturned{
+    grid-area: products;
+    display: none;
+}
+
 .profileComments{
     grid-area: comments;
 }

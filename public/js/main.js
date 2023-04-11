@@ -5,6 +5,7 @@ let reset;
 
 const profileOwned = document.querySelector('.profileProductsOwned');
 const profileBorrowed = document.querySelector('.profileProductsBorrowed');
+const profileReturned = document.querySelector('.profileProductsReturned');
 
 const modal = document.querySelector('#logout-modal');
 
@@ -13,7 +14,6 @@ displayConfirmModal = () =>{
 }
 
 closeModal = () =>{
-    console.log("ffsfsfsfsfsfsf");
     modal.style.display = "none";
 }
 
@@ -52,16 +52,26 @@ sort = () =>{
 }
 
 //wissel tussen de geleende en aangeboden/uitgeleende producten
-swapProductsProfile = () =>{
-    console.log("switch");
+swapProductsProfile = (action) =>{
 
-    //als de owned producten zichtbaar zijn word deze ondzichtbaar en de borrowed producten zichtbaar, als dit niet zo is gebeurt het omgekeerde
-    if (window.getComputedStyle(profileOwned).display === 'grid') {
-        profileOwned.style.display = 'none';
-        profileBorrowed.style.display = 'grid';
-    } else {
-        profileOwned.style.display = 'grid';
-        profileBorrowed.style.display = 'none';
+    //kijk op welke knop er geklicked word en update de visability
+
+    switch(action){
+        case "offered":
+            profileOwned.style.display = 'grid';
+            profileBorrowed.style.display = 'none';
+            profileReturned.style.display = 'none';
+            break;
+        case "lent":
+            profileOwned.style.display = 'none';
+            profileBorrowed.style.display = 'grid';
+            profileReturned.style.display = 'none';
+            break;
+        case "returned":
+            profileOwned.style.display = 'none';
+            profileBorrowed.style.display = 'none';
+            profileReturned.style.display = 'grid';
+            break;
     }
 }
 

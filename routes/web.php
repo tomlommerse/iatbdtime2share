@@ -19,6 +19,8 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/product', [\App\Http\Controllers\ProductController::class, 'store']);
     Route::post('/product/{id}/lend', [App\Http\Controllers\ProductController::class, 'lend'])->name('product.lend');
     Route::post('/product/{id}/return', [App\Http\Controllers\ProductController::class, 'return'])->name('product.return');
+    Route::post('/product', [App\Http\Controllers\CommentController::class, 'store'])->name('comments.store');
+
 
 });
 

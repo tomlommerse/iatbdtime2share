@@ -25,7 +25,7 @@
             <label for="comment">Comment:</label>
             <input class="productcomment" type="text" name="comment" id="comment">
             <input type="hidden" name="commenter_id" value="{{auth()->id()}}">
-            <button class="productbutton" type="submit">Add Comment</button>
+            <button class="productbutton" type="submit">accepteer</button>
         </form>
     @endif
 

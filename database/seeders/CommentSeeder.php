@@ -17,7 +17,7 @@ class CommentSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < 6; $i++) {
             DB::table('comments')->insert([
                 'user_id' => 1,
                 'commenter_id' => 1,

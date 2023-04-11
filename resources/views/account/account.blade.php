@@ -4,10 +4,10 @@
 
         <h1>{{Auth::user()->name}}</h1>
 
-        <ul class="swapButton">
-            <button onclick="swapProductsProfile('offered')">jouw producten</button>
-            <button onclick="swapProductsProfile('lent')">geleend</button>
-            <button onclick="swapProductsProfile('returned')">teruggestuurd</button>
+        <ul class="swapButtonContainer">
+            <button class="swapButton" onclick="swapProductsProfile('offered')">jouw producten</button>
+            <button class="swapButton" onclick="swapProductsProfile('lent')">geleend</button>
+            <button class="swapButton" onclick="swapProductsProfile('returned')">teruggestuurd</button>
         </ul>
 
         

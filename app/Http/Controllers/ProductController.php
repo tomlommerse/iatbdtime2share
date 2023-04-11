@@ -36,7 +36,6 @@ class ProductController extends Controller
 //uploaden nieuw product
     public function store(Request $request, \App\Models\Product $product){
 
-        // dd($request->img);
         $owner_id = Auth::id();
         $product->product = $request->input('name');
         $product->catname = $request->input('cat');

@@ -74,5 +74,3 @@ swapProductsProfile = (action) =>{
             break;
     }
 }
-
-// list_of_products[i].style.display = 'none';

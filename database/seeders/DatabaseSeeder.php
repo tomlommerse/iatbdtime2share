@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             RolesTableSeeder::class,
             AdminSeeder::class,
             CatSeeder::class,
-            CatHuishoudenTableSeeder::class,
+            ProductSeeder::class,
             CommentSeeder::class
         ]);
     }

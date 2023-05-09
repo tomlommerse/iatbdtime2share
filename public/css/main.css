@@ -349,3 +349,55 @@ h1 {
     background-color: var(--hovercolor);
 }
 
+
+/* login styling */
+.guestPage{
+    height: 100vh;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.authCard{
+    margin: 1em;
+    border-radius: 10px;
+    background-color: var(--cardbackground);
+    -webkit-box-shadow: 4px 4px 20px 0px rgba(0,0,0); 
+    box-shadow: 6px 6px 20px 0px rgba(0,0,0);
+    width: 60vw;
+    padding: 10px;
+}
+
+.loginItem > input{
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+
+.loginLink{
+    text-decoration: none;
+    color: #fff;
+}
+
+.loginLink:hover{
+    cursor: pointer;
+    color: var(--hovercolor);
+}
+
+.loginButton{
+    background-color: var(--background);
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.loginButton:hover{
+    background-color: var(--hovercolor);
+    cursor: pointer;
+}
+
+.loginText{
+    color: #fff;
+}

@@ -365,7 +365,7 @@ h1 {
     background-color: var(--cardbackground);
     -webkit-box-shadow: 4px 4px 20px 0px rgba(0,0,0); 
     box-shadow: 6px 6px 20px 0px rgba(0,0,0);
-    width: 60vw;
+    
     padding: 10px;
 }
 

@@ -36,12 +36,12 @@
                 </label>
             </div>
 
-            <a class="loginLink" href="/register">maak een account aan</a>
+            <a class="loginLink" href="/register">Maak een account aan</a>
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="loginLink" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+                        {{ __('Wachtwoord vergeten?') }}
                     </a>
                 @endif
                 

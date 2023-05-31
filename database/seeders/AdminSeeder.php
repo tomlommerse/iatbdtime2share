@@ -3,15 +3,15 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class AdminSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('users')->insert([
-            'id' => 1, //was eerst nul maar nog niet opnieuw geseed en gemigrate, hier kan dus iets fout gaan FIXME
+        User::create([
+            'id' => 1, // FIXME Note: It's recommended to let the database handle the ID generation (auto-increment).
             'name' => 'admin',
             'email' => 'admin@admin.com',
             'password' => Hash::make('admin'),

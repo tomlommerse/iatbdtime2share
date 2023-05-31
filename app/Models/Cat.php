@@ -9,6 +9,8 @@ class Cat extends Model
 {
     protected $table = "cat";
 
+    public $timestamps = false;
+
     public function allProducts(){
         return $this->hasMany('\App\Models\Product',"catname","catname");
     }

@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use DB;
+use App\Models\Cat;
 
 class CatSeeder extends Seeder
 {
@@ -16,11 +16,10 @@ class CatSeeder extends Seeder
     {
         $cat_array = ['huishouden', 'tuin', 'transport', 'entertainment', 'overig'];
 
-        foreach($cat_array as $cat){
-            DB::table('cat')->insert([
+        foreach ($cat_array as $cat) {
+            Cat::create([
                 'catname' => $cat
             ]);
         }
-
     }
 }

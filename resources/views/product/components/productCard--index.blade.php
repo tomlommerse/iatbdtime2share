@@ -2,7 +2,7 @@
     <a href="/product/{{$product->id}}">
         <article>
             <figure class="cardimgcontainer">
-            <img class="productimg" src="{{$product->image}}" alt="afbeelding van het product" />
+            <img class="productimg" src="{{ asset(str_replace('user/', '', $product->image)) }}" alt="afbeelding van het product" />
             </figure>
             <header class="cardtext">
                 <h2 >{{$product->product}}</h2>

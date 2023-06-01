@@ -20,6 +20,6 @@ class CheckIfAdmin
         if(Auth::user()->role === "Admin"){
             return $next($request);
         }
-        return redirect ('/');
+        
     }
 }

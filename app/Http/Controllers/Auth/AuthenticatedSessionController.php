@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -29,6 +30,12 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request)
     {
         $request->authenticate();
+
+        // Check if the user is blocked
+        if (Auth::user()->blocked) {
+            Auth::logout();
+            return Redirect::back()->withErrors(['email' => 'User is blocked.']);
+        }
 
         $request->session()->regenerate();
 

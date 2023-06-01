@@ -1,6 +1,6 @@
 <nav>
     <a href="/">producten</a>
-    <a href="/account">account</a>
+    <a href="/user/{{ Auth::id() }}">account</a>
     <a href="/product/create">toevoegen</a>
     @if(auth()->check())
         <button class="login" onclick="displayConfirmModal()" class="modal-trigger">uitloggen</button>

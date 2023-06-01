@@ -13,4 +13,9 @@ class Product extends Model
     public function catnameModel(){
         return $this->belongsTo("\App\Models\Cat","catname","catname");
     }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class, 'owner_id');
+    }
 }

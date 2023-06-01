@@ -256,6 +256,7 @@ label:hover{
 
 /* styling profile page */
 .profilepage{
+    padding-top: 100px; /*FIXME maak het responsive, niet 100px*/
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:

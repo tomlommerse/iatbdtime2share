@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 
+
+use App\Models\Product;
+use App\Models\User;
+
+
+
 class ProductController extends Controller
 {
 
@@ -21,10 +27,11 @@ class ProductController extends Controller
         ]);
     }
 
-    public function account(){
-        return view('account.account',[
-            'product' => \App\Models\Product::all()
-        ]);
+    public function account($id)
+    {
+        $user = User::findOrFail($id);
+
+        return view('account.account', compact('user'));
     }
 
     public function create(Request $request){
@@ -71,7 +78,22 @@ class ProductController extends Controller
         // $product->borrower_id = null;
         $product->save();
 
-        return redirect("/")->with('success', 'Product has been returned.');
+        return redirect("/")->with('success, Product has been returned.');
     }
+
+    public function destroy($id)
+    {
+        if (Auth::user()->role === 'admin') {
+            $product = Product::findOrFail($id);
+            $product->delete();
+            return redirect("/")->with('success', 'Product has been deleted');
+        }
+        
+        return redirect("/")->with('failed', 'Not authorized to delete product');
+    }
+    
+    
+
+
 
 }

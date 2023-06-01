@@ -29,5 +29,18 @@
         </form>
     @endif
 
+    
+    @if (Auth::user()->role === 'admin')
+        <form method="POST" action="{{ route('product.destroy', $product->id) }}">
+            @csrf
+            @method('DELETE')
+            <button type="submit" onclick="return confirm('Are you sure you want to delete this product?')">Delete</button>
+        </form>
+    @endif
+
+    <a href="/user/{{$product->owner->id}}">{{$product->owner->name}}</a>
+
+
+
 
 </article>

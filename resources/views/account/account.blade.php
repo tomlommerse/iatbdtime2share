@@ -8,7 +8,7 @@
                 <form method="POST" action="{{ route('user.unblock', $user->id) }}">
                     @csrf
                     @method('PUT')
-                    <button type="submit">Unblock User</button>
+                    <button class="blockButton" type="submit">Unblock User</button>
                 </form>
             @else
                 <p>User is blocked.</p>
@@ -20,15 +20,15 @@
                 <form method="POST" action="{{ route('user.block', $user->id) }}">
                     @csrf
                     @method('PUT')
-                    <button type="submit">Block User</button>
+                    <button class="blockButton" type="submit">Block User</button>
                 </form>
             @endif
 
-            <ul class="swapButtonContainer">
+            <div class="swapButtonContainer">
                 <button class="swapButton" onclick="swapProductsProfile('offered')">jouw producten</button>
                 <button class="swapButton" onclick="swapProductsProfile('lent')">geleend</button>
                 <button class="swapButton" onclick="swapProductsProfile('returned')">teruggestuurd</button>
-            </ul>
+            </div>
 
             <ul class="profileProductsOwned">
                 @foreach(\App\Models\Product::where('owner_id', $user->id)->where('status', 'offered')->get() as $product)

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Product;
+use Carbon\Carbon;
 
 class ProductSeeder extends Seeder
 {
@@ -22,7 +23,8 @@ class ProductSeeder extends Seeder
                 'catname' => "huishouden",
                 'description' => "placeholder",
                 'image' => 'img/1.jpg',
-                'owner_id' => 1
+                'owner_id' => 1,
+                'return_date' => Carbon::now()->addWeek()
             ]);
         }
 
@@ -34,7 +36,8 @@ class ProductSeeder extends Seeder
                 'catname' => "entertainment",
                 'description' => "placeholder",
                 'image' => 'img/1.jpg',
-                'owner_id' => 1
+                'owner_id' => 1,
+                'return_date' => Carbon::now()->addWeek()
             ]);
         }
 
@@ -47,7 +50,8 @@ class ProductSeeder extends Seeder
                 'catname' => "overig",
                 'description' => "placeholder",
                 'image' => 'img/1.jpg',
-                'owner_id' => 1
+                'owner_id' => 1,
+                'return_date' => Carbon::now()->addWeek()
             ]);
         }
 
@@ -60,7 +64,8 @@ class ProductSeeder extends Seeder
                 'catname' => "transport",
                 'description' => "placeholder",
                 'image' => 'img/1.jpg',
-                'owner_id' => 1
+                'owner_id' => 1,
+                'return_date' => Carbon::now()->addWeek()
             ]);
         }
 
@@ -73,7 +78,8 @@ class ProductSeeder extends Seeder
                 'catname' => "tuin",
                 'description' => "placeholder",
                 'image' => 'img/1.jpg',
-                'owner_id' => 1
+                'owner_id' => 1,
+                'return_date' => Carbon::now()->addWeek()
             ]);
         }
     }

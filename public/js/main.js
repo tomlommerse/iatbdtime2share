@@ -74,3 +74,21 @@ swapProductsProfile = (action) =>{
             break;
     }
 }
+
+//confirm message en submit producten
+submitLeen = (formId) =>{
+    const form = document.getElementById(formId);
+    form.submit();
+    alert('Bedankt voor het lenen van dit product.');
+}
+submitRetur = (formId) => {
+    const form = document.getElementById(formId);
+    form.submit();
+    alert('Bedankt voor het terugbrengen van dit product.');
+}
+
+submitComment = () => {
+    const form = document.querySelector('form[method="POST"]');
+    form.submit();
+    alert('Bedankt voor het plaatsen van een reactie.');
+}

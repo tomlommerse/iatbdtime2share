@@ -37,8 +37,6 @@ nav > a{
     padding: 14px;
     text-decoration: none;
     font-size: 1.5em;
-    top: 50%;
-    left: 50%;
 }
 
 nav > button{
@@ -126,6 +124,10 @@ body{
 
 
 /* styling index */
+.indexpage{
+    padding-top: 4em;
+}
+
 ul{
     list-style: none;
 }
@@ -153,7 +155,7 @@ ul{
 
 /* sort buttons styling */
 .sortlist{
-    padding: 4vw 0vw 1vw 5vw;
+    padding: 0vw 0vw 0vw 5vw;
     display: flex;
     flex-wrap: wrap;
 }
@@ -163,10 +165,12 @@ ul{
 }
 
 .sortlist > label {
-    margin-right: 20px;
+    margin-right: 0.5em;
+    margin-bottom: 0.25em;
     background-color: #f5f5f5;
     padding: 5px;
     border-radius: 5px;
+
 }
 
 input:checked + label {
@@ -183,12 +187,10 @@ label:hover{
     flex-wrap: wrap;
     grid-area: swap;
     width: 25vw;
-    padding-top:40px;
 }
 
 .swapButton{
     width: 30%;
-    padding: 3px;
     margin: 3px;
     border-radius: 5px; 
     background-color: #f5f5f5;
@@ -292,7 +294,7 @@ label:hover{
 
 /* styling profile page */
 .profilepage{
-    padding-top: 100px; /*FIXME maak het responsive, niet 100px*/
+    padding-top: 4em;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -301,7 +303,8 @@ label:hover{
         "products comments";
 }
 
-h1 {
+.profilepage h1{
+    padding-left: 3px;
     grid-area: title;
 }
 
@@ -437,4 +440,73 @@ h1 {
 
 .loginText{
     color: #fff;
+}
+
+/* mobile styling */
+@media (orientation: portrait) {
+    .productpagecard{
+        width: 90vw;
+    }
+
+    .imgcontainer{
+        width: 80vw;
+    }
+
+    .productlist{
+        grid-template-columns: 1fr;
+    }
+
+    nav{
+        height: 80px;
+    }
+    .indexpage{
+        padding-top: 5em;
+    }
+
+    .createform{
+        width: 90vw;
+    }
+
+    .profilepage{
+        padding-top: 5em;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "title"
+            "swap"
+            "products"
+            "comments";
+    }
+
+    .profileProductsOwned, .profileProductsBorrowed, .profileProductsReturned{
+        grid-template-columns: 1fr;
+    }
+
+    .swapButtonContainer{
+        width: 100vw;
+    }
+
+    .modal {
+        width: 100%;
+    }
+    
+    .modal-content {
+        margin: 30% auto;
+        width: 80%;
+    }
+}
+
+/* blokkeerknop styling */
+.blockButton{
+    color: white;
+    border-radius: 5px; 
+    background-color: red;
+    padding: 5px;
+    border: 0px;
+    margin: 5px;
+}
+
+.blockButton:hover{
+    cursor: pointer;
+    background-color: var(--alertred);
 }

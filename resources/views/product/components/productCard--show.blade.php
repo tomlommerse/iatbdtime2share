@@ -36,25 +36,6 @@
     </form>
 @endif
 
-<script>
-    function submitLeen(formId) {
-        const form = document.getElementById(formId);
-        form.submit();
-        alert('Bedankt voor het lenen van dit product.');
-    }
-    function submitReturn(formId) {
-        const form = document.getElementById(formId);
-        form.submit();
-        alert('Bedankt voor het terugbrengen van dit product.');
-    }
-    
-    function submitComment() {
-        const form = document.querySelector('form[method="POST"]');
-        form.submit();
-        alert('Bedankt voor het plaatsen van een reactie.');
-    }
-</script>
-
         
         @if (Auth::user()->role === 'admin')
             <form method="POST" action="{{ route('product.destroy', $product->id) }}">

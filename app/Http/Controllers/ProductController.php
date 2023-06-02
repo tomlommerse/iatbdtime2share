@@ -42,7 +42,6 @@ class ProductController extends Controller
 
 //uploaden nieuw product
     public function store(Request $request, \App\Models\Product $product){
-
         $owner_id = Auth::id();
         $product->product = $request->input('name');
         $product->catname = $request->input('cat');
@@ -52,15 +51,8 @@ class ProductController extends Controller
         $product->return_date = $request->input('return_date');
         $product->owner_id = $owner_id;
 
-
-        // try{
-            $product->save();
-            return redirect('/');
-        // }
-        // catch(Exception $e){
-        //     return redirect('/product/create');
-        // }
-        
+        $product->save();
+        return redirect('/');
     }
 
     public function lend(Request $request, $id){

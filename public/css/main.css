@@ -203,28 +203,47 @@ label:hover{
 
 /* styling product page */
 .productpage{
-    padding-top: 75px;
     width: 100vw;
-    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.productpagecard {
+    margin-top: 75px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 40vw;
     background-color: var(--cardbackground);
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
-    "productname productname"
-    "image description"
-    "image button";
+        "productTop"
+        "image"
+        "button"
+        "description";
+    justify-items: center;
+    border-radius: 10px;
 }
 
-.productpage > h2{
-    grid-area: productname;
-    padding-left: 10vw;
+.productTop {
+    grid-area: productTop;
+    margin-bottom: 20px;
+}
+
+.owner {
+    color: #fff;
+}
+
+.owner:hover{
+    color: var(--hovercolor);
 }
 
 .imgcontainer {
-    width: 35vw;
-    height: 35vw;
-    margin-left: 10vw;
+    width: 30vw;
     grid-area: image;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .productpageimg {
@@ -235,23 +254,36 @@ label:hover{
     border-radius: 10px;
 }
 
-.productbutton{
+.productbutton {
     width: 100px;
     height: 35px;
     background-color: #f5f5f5;
     padding: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     border: 0px;
     text-decoration: none;
     color: #000000;
+    grid-area: button;
+    margin-bottom: 20px;
 }
 
-.productcomment{
+.productcomment {
     width: 200px;
     background-color: #f5f5f5;
     padding: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     border: 0px;
+    margin-bottom: 20px;
+}
+
+@media (orientation: portrait) {
+    .productpagecard{
+        width: 90vw;
+    }
+
+    .imgcontainer{
+        width: 80vw;
+    }
 }
 
 /* styling profile page */

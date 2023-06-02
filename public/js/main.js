@@ -32,7 +32,7 @@ sort = () =>{
                 list_of_products[j].style.display = 'none';
             }
 
-            //check of alle producten ondzichtbaar zijn
+            //check of alle producten ontzichtbaar zijn
             if(list_of_products[j].style.display === 'none'){
                 k++
                 if(k === list_of_products.length){

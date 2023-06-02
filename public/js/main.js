@@ -81,7 +81,7 @@ submitLeen = (formId) =>{
     form.submit();
     alert('Bedankt voor het lenen van dit product.');
 }
-submitRetur = (formId) => {
+submitReturn = (formId) => {
     const form = document.getElementById(formId);
     form.submit();
     alert('Bedankt voor het terugbrengen van dit product.');

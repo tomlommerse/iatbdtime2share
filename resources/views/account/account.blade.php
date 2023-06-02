@@ -37,7 +37,7 @@
             </ul>
 
             <ul class="profileProductsBorrowed">
-                @foreach(\App\Models\Product::where('borrower_id', $user->id)->get() as $product)
+                @foreach(\App\Models\Product::where('borrower_id', $user->id)->where('status', 'lent')->get() as $product)
                     @include('product.components.productCard--index')
                 @endforeach
             </ul>

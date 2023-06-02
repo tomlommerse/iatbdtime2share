@@ -18,18 +18,18 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/user/{id}', [\App\Http\Controllers\ProductController::class, 'account'])->name('user.account');
     Route::get('/product/create', [\App\Http\Controllers\ProductController::class, 'create']);
     Route::post('/product', [\App\Http\Controllers\ProductController::class, 'store']);
-    Route::post('/product/{id}/lend', [App\Http\Controllers\ProductController::class, 'lend'])->name('product.lend');
-    Route::post('/product/{id}/return', [App\Http\Controllers\ProductController::class, 'return'])->name('product.return');
+    Route::get('/product/{id}', [\App\Http\Controllers\ProductController::class, 'show']);
+    Route::put('/product/{id}/lend', [App\Http\Controllers\ProductController::class, 'lend'])->name('product.lend');
+    Route::put('/product/{id}/return', [App\Http\Controllers\ProductController::class, 'return'])->name('product.return');
     Route::post('/product/comment', [App\Http\Controllers\CommentController::class, 'store'])->name('comments.store');
 });
-
 
 Route::put('/user/{user}/block', [\App\Http\Controllers\UserController::class, 'block'])->name('user.block');
 Route::put('/user/{user}/unblock', [\App\Http\Controllers\UserController::class, 'unblock'])->name('user.unblock');
 
 Route::get('/', [\App\Http\Controllers\ProductController::class, 'index']);
 Route::get('/product', [\App\Http\Controllers\ProductController::class, 'index']);
-Route::get('/product/{id}', [\App\Http\Controllers\ProductController::class, 'show']);
+
 
 
 
